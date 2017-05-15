@@ -10,6 +10,8 @@ function LunchCheckController($scope) {
 
   $scope.lunchMenu = '';
   $scope.displayMessage = '';
+  $scope.lunchMenuInputClass = '';
+  $scope.displayMessageClass = '';
 
   $scope.submitForm = function() {
     var userInputStringArray = $scope.lunchMenu.split(',');
@@ -23,18 +25,18 @@ function LunchCheckController($scope) {
 
     if(userInputStringArray.length == 0) {
       $scope.displayMessage = 'Please enter data first';
-      document.querySelector("#lunch-menu").style.border = "1px solid red";
-      document.querySelector(".message").style.color = "red";
+      $scope.lunchMenuInputClass = 'lunch-menu-input-red';
+      $scope.displayMessageClass = 'message-red';
     }
     else if(userInputStringArray.length <= 3) {
       $scope.displayMessage = 'Enjoy!';
-      document.querySelector("#lunch-menu").style.border = "1px solid green";
-      document.querySelector(".message").style.color = "green";
+      $scope.lunchMenuInputClass = 'lunch-menu-input-green';
+      $scope.displayMessageClass = 'message-green';
     }
     else if(userInputStringArray.length > 3){
       $scope.displayMessage = 'Too much!';
-      document.querySelector("#lunch-menu").style.border = "1px solid green";
-      document.querySelector(".message").style.color = "green";
+      $scope.lunchMenuInputClass = 'lunch-menu-input-green';
+      $scope.displayMessageClass = 'message-green';
     }
   }
 }
