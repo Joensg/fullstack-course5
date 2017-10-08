@@ -65,7 +65,7 @@
 
                 if (searchTerm && searchTerm.trim().length > 0) {
                     allMenuItems.forEach(function (menuItem) {
-                        var index = menuItem.description.indexOf(searchTerm);
+                        var index = menuItem.description.indexOf(searchTerm.toLowerCase());
                         if(index > -1) {
                             foundItems.push(menuItem);
                         }
