@@ -38,8 +38,8 @@
                     ctrl.nothingFound = true;
                 } else {
                     ctrl.nothingFound = false;
-                    ctrl.found = foundItems;
                 }
+                ctrl.found = foundItems;
             });
         };
 
@@ -62,12 +62,15 @@
                 // process result and only keep items that match
                 var foundItems = [];
                 var allMenuItems = result.data.menu_items;
-                allMenuItems.forEach(function (menuItem) {
-                    var index = menuItem.description.indexOf(searchTerm);
-                    if(index > -1) {
-                        foundItems.push(menuItem);
-                    }
-                });
+
+                if (searchTerm && searchTerm.trim().length > 0) {
+                    allMenuItems.forEach(function (menuItem) {
+                        var index = menuItem.description.indexOf(searchTerm);
+                        if(index > -1) {
+                            foundItems.push(menuItem);
+                        }
+                    });
+                }
                 // return processed items
                 return foundItems;
             });
