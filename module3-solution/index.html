@@ -8,18 +8,31 @@
   </head>
 <body ng-app="NarrowItDownApp">
    <div ng-controller="NarrowItDownController as narrowItDownCtrl" class="container">
-    <h1>Narrow Down Your Chinese Menu Choice</h1>
+     <div class="row">
+       <div class="col-xs-12">
+         <h1>Narrow Down Your Chinese Menu Choice</h1>
+       </div>
+     </div>
 
-    <div class="form-group">
-      <input ng-model="narrowItDownCtrl.searchTerm" type="text" placeholder="search term" class="form-control">
-    </div>
-    <div class="form-group narrow-button">
-      <button ng-click="narrowItDownCtrl.search();" class="btn btn-primary">Narrow It Down For Me!</button>
-    </div>
-   <div class="error" ng-show="narrowItDownCtrl.nothingFound">Nothing found</div>
+     <div class="row">
+       <div class="col-xs-12 col-sm-8">
+         <div class="form-group col-xs-12 col-sm-5">
+           <input ng-model="narrowItDownCtrl.searchTerm" type="text" placeholder="search term" class="form-control">
+         </div>
+         <div class="form-group narrow-button col-xs-12 col-sm-3">
+           <button ng-click="narrowItDownCtrl.search();" class="btn btn-primary">Narrow It Down For Me!</button>
+         </div>
+       </div>
+     </div>
 
-    <!-- found-items should be implemented as a component -->
-    <found-items items="narrowItDownCtrl.found" on-remove="narrowItDownCtrl.removeItem(index)"></found-items>
+     <div class="row">
+       <div class="col-xs-12">
+         <div class="error col-xs-12" ng-show="narrowItDownCtrl.nothingFound">Nothing found</div>
+         <!-- found-items should be implemented as a component -->
+         <found-items items="narrowItDownCtrl.found" on-remove="narrowItDownCtrl.removeItem(index)"></found-items>
+       </div>
+     </div>
+
   </div>
 
    <!-- AngularJS -->

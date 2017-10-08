@@ -1,8 +1,14 @@
-<ol>
-    <li ng-repeat="item in list.items">
-        <div>{{ item.name }}</div>
-        <div>{{ item.short_name }}</div>
-        <div>{{ item.description }}</div>
-        <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
-    </li>
-</ol>
+<div ng-repeat="item in list.items" class="col-xs-12 col-sm-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h5>{{ item.name }}</h5>
+      <div><strong>{{ item.short_name }}</strong></div>
+    </div>
+    <div class="panel-body">
+      <p>{{ item.description }}</p>
+    </div>
+    <div class="panel-footer">
+      <button ng-click="list.onRemove({index: $index});" class="btn btn-primary">Don't want this one!</button>
+    </div>
+  </div>
+</div>
