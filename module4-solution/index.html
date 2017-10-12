@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app='MenuApp'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Menu Single page App</title>
+  </head>
+  <body>
+    <h1>Menu Single page App</h1>
+
+    <div class="tabs">
+      <a ui-sref="tab1" ui-sref-active="activeTab">Tab 1</a>
+      <a ui-sref="tab2" ui-sref-active="activeTab">Tab 2</a>
+      <!-- <button ui-sref="tab2">Tab 2</button> -->
+    </div>
+
+    <ui-view></ui-view>
+
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/menuapp.module.js"></script>
+    <script src="src/data.module.js"></script>
+
+    <!-- Module config -->
+    <script src="src/menuapp.module.config.js"></script>
+
+    <!-- Services -->
+    <script src="src/apibasepath.constant.js"></script>
+    <script src="src/menudata.service.js"></script>
+
+  </body>
+</html>
