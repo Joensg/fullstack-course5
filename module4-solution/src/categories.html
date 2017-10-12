@@ -1,20 +1,13 @@
-<div>This is categories content</div>
-<div ng-repeat="category in dataCtrl.categories">
-  <span>{{category}}</span>
-</div>
+<h4>The following are the different menu categories</h4>
 
-
-<div ng-repeat="item in list.items" class="col-xs-12 col-sm-4">
+<div
+    ng-repeat="category in $ctrl.categories"
+    ui-sref="items({categoryShortName: category.short_name})"
+    class="col-xs-12 col-sm-4">
   <div class="panel panel-default">
-    <div class="panel-heading">
-      <h5>{{ item.name }}</h5>
-      <div><strong>{{ item.short_name }}</strong></div>
-    </div>
-    <div class="panel-body">
-      <p>{{ item.description }}</p>
-    </div>
-    <div class="panel-footer">
-      <button ng-click="list.onRemove({index: $index});" class="btn btn-primary">Don't want this one!</button>
+    <div class="panel-heading categories">
+      <h5>{{ category.name }}</h5>
+      <div><strong>{{ category.short_name }}</strong></div>
     </div>
   </div>
 </div>

@@ -3,9 +3,9 @@
 
     angular.module('data')
         .component('items', {
-            templateUrl: 'src/shoppinglist/templates/shoppinglist.template.html',
+            templateUrl: 'src/items.html',
             bindings: {
-                categories: '<'
+                items: '<'
             }
         });
 

@@ -23,6 +23,14 @@ h1 {
   margin-bottom: 25px;
 }
 
+.categories {
+  cursor: pointer;
+}
+
+.categories:hover {
+  box-shadow: 0 0 6px #10c7f1;
+}
+
 .panel-heading {
   height: 80px;
 }

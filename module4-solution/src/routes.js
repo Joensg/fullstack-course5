@@ -8,23 +8,35 @@
     function RoutesConfig($stateProvider, $urlRouterProvider) {
 
         // Redirect to tab 1 if no other URL matches
-        $urlRouterProvider.otherwise('/home');
+        $urlRouterProvider.otherwise('/');
 
         // Set up UI states
         $stateProvider
             .state('home', {
-                url: '/home',
+                url: '/',
                 templateUrl: 'src/home.html'
             })
 
             .state('categories', {
                 url: '/categories',
-                templateUrl: 'src/categories.html'
+                templateUrl: 'src/categories_view.html',
+                controller: 'CategoriesController as CategoriesCtrl',
+                resolve: {
+                    categories: ['MenuDataService', function(MenuDataService) {
+                        return MenuDataService.getAllCategories();
+                    }]
+                }
             })
 
             .state('items', {
-                url: '/items',
-                templateUrl: 'src/items.html'
+                url: '/items/{categoryShortName}',
+                templateUrl: 'src/items_view.html',
+                controller: 'ItemsController as ItemsCtrl',
+                resolve: {
+                    items: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService) {
+                        return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
+                    }]
+                }
             });
     }
 })();

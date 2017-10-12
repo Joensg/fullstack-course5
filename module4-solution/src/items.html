@@ -1,1 +1,15 @@
-<div>This is items content</div>
+<h4>The following are the different items under the selected category</h4>
+
+<div
+    ng-repeat="item in $ctrl.items"
+    class="col-xs-12 col-sm-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h5>{{ item.name }}</h5>
+      <div><strong>{{ item.short_name }}</strong></div>
+    </div>
+    <div class="panel-body">
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
+</div>
