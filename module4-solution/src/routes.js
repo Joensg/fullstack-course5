@@ -29,7 +29,7 @@
             })
 
             .state('items', {
-                url: '/items/{categoryShortName}',
+                url: '/categories/{categoryShortName}',
                 templateUrl: 'src/items_view.html',
                 controller: 'ItemsController as ItemsCtrl',
                 resolve: {
