@@ -1,4 +1,6 @@
 (function () {
+    'use strict';
+
     angular.module('data').service('MenuDataService', MenuDataService);
 
     MenuDataService.$inject = ['$http', 'ApiBasePath'];
@@ -11,7 +13,7 @@
                 method: "GET",
                 url: (ApiBasePath + "/categories.json")
             }).then(function (result) {
-                return result.data.menu_items;
+                return result.data;
             });
         };
 
@@ -20,7 +22,7 @@
                 method: "GET",
                 url: (ApiBasePath + "/menu_items.json?category=" + categoryShortName)
             }).then(function (result) {
-                return result.data.menu_item;
+                return result.data;
             });
         };
     }

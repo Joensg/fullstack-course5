@@ -8,15 +8,38 @@
     <title>Menu Single page App</title>
   </head>
   <body>
-    <h1>Menu Single page App</h1>
+    <div ng-controller="DataController as dataCtrl" class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Menu Single page App</h1>
+        </div>
+      </div>
 
-    <div class="tabs">
-      <a ui-sref="tab1" ui-sref-active="activeTab">Tab 1</a>
-      <a ui-sref="tab2" ui-sref-active="activeTab">Tab 2</a>
-      <!-- <button ui-sref="tab2">Tab 2</button> -->
+      <div class="row">
+        <div class="tabs">
+          <a ui-sref="home" ui-sref-active="activeTab">Home</a>
+          <a ui-sref="categories" ui-sref-active="activeTab">Categories</a>
+          <a ui-sref="items" ui-sref-active="activeTab">Items</a>
+          <!-- <button ui-sref="tab2">Tab 2</button> -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <ui-view></ui-view>
+        </div>
+      </div>
+
+      <!--<div class="row">-->
+        <!--<div class="col-xs-12">-->
+          <!--<div class="error col-xs-12" ng-show="narrowItDownCtrl.nothingFound">Nothing found</div>-->
+          <!--&lt;!&ndash; found-items should be implemented as a component &ndash;&gt;-->
+          <!--<found-items items="narrowItDownCtrl.found" on-remove="narrowItDownCtrl.removeItem(index)"></found-items>-->
+        <!--</div>-->
+      <!--</div>-->
+
     </div>
 
-    <ui-view></ui-view>
 
     <!-- Libraries -->
     <script src="lib/angular.min.js"></script>
@@ -26,12 +49,15 @@
     <script src="src/menuapp.module.js"></script>
     <script src="src/data.module.js"></script>
 
-    <!-- Module config -->
-    <script src="src/menuapp.module.config.js"></script>
+    <!-- Module config routes -->
+    <script src="src/routes.js"></script>
 
     <!-- Services -->
     <script src="src/apibasepath.constant.js"></script>
     <script src="src/menudata.service.js"></script>
+
+    <!-- Controllers -->
+    <script src="src/data.controller.js"></script>
 
   </body>
 </html>
