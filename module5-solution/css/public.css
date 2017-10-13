@@ -113,6 +113,18 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+/* SIGNUP PAGE */
+.signup-form-container {
+  margin: 0 auto;
+  width:60%
+}
+/* END SIGNUP PAGE */
+
+/* MYINFO PAGE */
+.my-info {
+  margin-top: 20px;
+}
+/* END MYINFO PAGE */
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {

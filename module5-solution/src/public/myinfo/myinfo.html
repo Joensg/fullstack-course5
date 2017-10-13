@@ -1,0 +1,99 @@
+<div class="container signup-form-container">
+  <h2
+    id="menu-categories-title"
+    class="text-center">
+      Your Information
+  </h2>
+  <div
+    class="text-center"
+    ng-show="!myinfoCtrl.myinfo.firstName">
+      Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
+  <div
+    class="text-center"
+    ng-show="myinfoCtrl.myinfo.firstName">
+      Your registered information.
+  </div>
+  <div
+    class="col-xs-12 my-info"
+    ng-show="myinfoCtrl.myinfo.firstName">
+    <form
+      name='myinfoForm'
+      novalidate>
+
+      <div class="form-group row">
+        <label
+          for="firstName"
+          class="control-label col-form-label col-sm-3">
+            First Name
+        </label>
+        <div class="col-sm-9">
+          {{ myinfoCtrl.myinfo.firstName }}
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label
+          for="firstName"
+          class="control-label col-form-label col-sm-3">
+            Last Name
+        </label>
+        <div class="col-sm-9">
+          {{ myinfoCtrl.myinfo.lastName }}
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label
+          for="firstName"
+          class="control-label col-form-label col-sm-3">
+            Email
+        </label>
+        <div class="col-sm-9">
+          {{ myinfoCtrl.myinfo.email }}
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label
+          for="firstName"
+          class="control-label col-form-label col-sm-3">
+            Phone
+        </label>
+        <div class="col-sm-9">
+          {{ myinfoCtrl.myinfo.phone }}
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label
+          for="firstName"
+          class="control-label col-form-label col-sm-3">
+            Favorite Dish Menu Number
+        </label>
+        <div class="col-sm-9">
+          {{ myinfoCtrl.myinfo.favMenuNumber }}
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="menu-item-tile col-md-6">
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="menu-item-photo">
+                <div>{{myinfoCtrl.myinfo.favMenuItem.short_name}}</div>
+                <img class="img-responsive" width="250" height="150" ng-src="{{myinfoCtrl.basePath}}/images/{{myinfoCtrl.myinfo.favMenuItem.short_name}}.jpg" alt="{{myinfoCtrl.myinfo.favMenuItem.name}}">
+              </div>
+            </div>
+            <div class="menu-item-description col-sm-7">
+              <h3 class="menu-item-title">{{myinfoCtrl.myinfo.favMenuItem.name}}</h3>
+              <p class="menu-item-details">{{myinfoCtrl.myinfo.favMenuItem.description}}</p>
+            </div>
+          </div>
+          <hr class="visible-xs">
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
