@@ -9,9 +9,19 @@
     function SignupController(MenuService, MyinfoService) {
       var $ctrl = this;
 
+      $ctrl.user = {};
+
+      $ctrl.submitSuccess = false;
       $ctrl.favMenuNumberNotFound = false;
 
       $ctrl.submit = function () {
+        if ($ctrl.user.favMenuItem) {
+          MyinfoService.setMyinfo($ctrl.user);
+          $ctrl.submitSuccess = true;
+        }
+      };
+
+      $ctrl.checkMenuNumber = function () {
         $ctrl.favMenuNumberNotFound = true;
         MenuService
           .getMenuItem($ctrl.user.favMenuNumber)
@@ -19,7 +29,6 @@
             if (response && (response.short_name === $ctrl.user.favMenuNumber)) {
               $ctrl.favMenuNumberNotFound = false;
               $ctrl.user.favMenuItem = response;
-              MyinfoService.setMyinfo($ctrl.user);
             } else {
               $ctrl.favMenuNumberNotFound = true;
             }

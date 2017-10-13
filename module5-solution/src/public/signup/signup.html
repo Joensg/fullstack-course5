@@ -169,6 +169,7 @@
           id="favMenuNumber"
           placeholder="Dish Menu Number (short name)"
           ng-model="signupCtrl.user.favMenuNumber"
+          ng-blur="signupCtrl.checkMenuNumber()"
           required>
           <span
             ng-if="signupForm.favMenuNumber.$error.required && signupForm.favMenuNumber.$touched"
@@ -191,7 +192,7 @@
       </button>
 
       <div
-        ng-if="!signupCtrl.favMenuNumberNotFound && signupForm.$submitted"
+        ng-if="signupCtrl.submitSuccess && signupForm.$submitted"
         class="text-center">
         Your information has been saved.
       </div>
